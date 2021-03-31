@@ -10,4 +10,6 @@ COPY ./custom.ini /usr/local/etc/php/conf.d/
 
 WORKDIR /app
 
+RUN composer self-update 2.0.11
+
 ENTRYPOINT ["composer"]
