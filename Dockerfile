@@ -1,4 +1,4 @@
-FROM php:7.3.20-cli-alpine
+FROM php:7.4.16-cli-alpine
 
 RUN apk update \
     && apk add --no-cache --virtual .build-dependencies zip zlib-dev libzip-dev \
@@ -9,7 +9,5 @@ RUN apk update \
 COPY ./custom.ini /usr/local/etc/php/conf.d/
 
 WORKDIR /app
-
-RUN composer self-update 1.9.1
 
 ENTRYPOINT ["composer"]
